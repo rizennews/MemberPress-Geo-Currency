@@ -114,7 +114,12 @@ function mpgc_ipinfo_api_key_callback() {
         '<input type="text" name="mpgc_ipinfo_api_key" value="%s" class="regular-text" />',
         esc_attr( $ipinfo_api_key )
     );
-    echo '<p class="description">' . __( 'Enter your IPInfo API key.', 'memberpress-geo-currency' ) . '</p>';
+    echo '<p class="description">';
+    printf(
+        __( 'Enter your IPInfo API key. Get one at %s.', 'memberpress-geo-currency' ),
+        '<a href="https://ipinfo.io/signup" target="_blank">ipinfo.io</a>'
+    );
+    echo '</p>';
 }
 
 function mpgc_oer_api_key_callback() {
@@ -123,7 +128,12 @@ function mpgc_oer_api_key_callback() {
         '<input type="text" name="mpgc_oer_api_key" value="%s" class="regular-text" />',
         esc_attr( $oer_api_key )
     );
-    echo '<p class="description">' . __( 'Enter your Open Exchange Rates API key.', 'memberpress-geo-currency' ) . '</p>';
+    echo '<p class="description">';
+    printf(
+        __( 'Enter your Open Exchange Rates API key. Get one at %s.', 'memberpress-geo-currency' ),
+        '<a href="https://openexchangerates.org/signup" target="_blank">openexchangerates.org</a>'
+    );
+    echo '</p>';
 }
 
 function mpgc_default_currency_callback() {
