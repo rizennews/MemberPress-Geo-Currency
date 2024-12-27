@@ -201,4 +201,3 @@ jQuery(document).ready(function($) {
 $('.mpgc-accordion h3').click(function() {
     $(this).next('div').slideToggle().siblings('div').slideUp();
 });
-});
