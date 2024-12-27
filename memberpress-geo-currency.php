@@ -15,6 +15,18 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+
+// Update Checker (using YahnisElsts/plugin-update-checker)
+require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$updateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/rizennews/memberpress-geo-currency/',
+    __FILE__,
+    'memberpress-geo-currency'
+);
+
 // Define plugin constants
 define( 'MPGC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MPGC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -77,3 +89,7 @@ function mpgc_enqueue_admin_scripts( $hook ) {
     wp_enqueue_script( 'mpgc-admin-js', MPGC_PLUGIN_URL . 'assets/js/admin.js', array( 'jquery' ), MPGC_PLUGIN_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'mpgc_enqueue_admin_scripts' );
+
+
+
+
