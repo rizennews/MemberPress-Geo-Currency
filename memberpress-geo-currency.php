@@ -1,4 +1,5 @@
 <?php
+namespace MemberPressGeoCurrency;
 /**
  * Plugin Name: MemberPress Geo Currency
  * Plugin URI:  https://github.com/rizennews/memberpress-geo-currency

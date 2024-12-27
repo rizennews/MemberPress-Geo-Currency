@@ -1,4 +1,5 @@
 <?php
+namespace MemberPressGeoCurrency;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
