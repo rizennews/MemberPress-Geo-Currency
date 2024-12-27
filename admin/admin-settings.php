@@ -15,12 +15,12 @@ function mpgc_register_settings_page() {
         __( 'Geo Currency', 'memberpress-geo-currency' ),
         'manage_options',
         'mpgc-settings',
-        __NAMESPACE__ . '\mpgc_settings_page_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_settings_page_callback',
         'dashicons-money-alt',
-        100
+        100 // Adjust the position as needed
     );
 }
-add_action('admin_menu', __NAMESPACE__ . '\mpgc_register_settings_page'); // Use namespace
+add_action('admin_menu', __NAMESPACE__ . '\mpgc_register_settings_page');
 
 /**
  * Settings page callback.
@@ -53,14 +53,14 @@ function mpgc_register_settings() {
     add_settings_section(
         'mpgc_api_settings',
         __( 'API Settings', 'memberpress-geo-currency' ),
-        __NAMESPACE__ . '\mpgc_api_settings_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_api_settings_callback',
         'mpgc-settings'
     );
 
     add_settings_field(
         'mpgc_ipinfo_api_key',
         __( 'IPInfo API Key', 'memberpress-geo-currency' ),
-        __NAMESPACE__ . '\mpgc_ipinfo_api_key_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_ipinfo_api_key_callback',
         'mpgc-settings',
         'mpgc_api_settings'
     );
@@ -68,7 +68,7 @@ function mpgc_register_settings() {
     add_settings_field(
         'mpgc_oer_api_key',
         __( 'Open Exchange Rates API Key', 'memberpress-geo-currency' ),
-        __NAMESPACE__ . '\mpgc_oer_api_key_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_oer_api_key_callback',
         'mpgc-settings',
         'mpgc_api_settings'
     );
@@ -76,14 +76,14 @@ function mpgc_register_settings() {
     add_settings_section(
         'mpgc_general_settings',
         __( 'General Settings', 'memberpress-geo-currency' ),
-        __NAMESPACE__ . '\mpgc_general_settings_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_general_settings_callback',
         'mpgc-settings'
     );
 
     add_settings_field(
         'mpgc_default_currency',
         __( 'Default Currency', 'memberpress-geo-currency' ),
-        __NAMESPACE__ . '\mpgc_default_currency_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_default_currency_callback',
         'mpgc-settings',
         'mpgc_general_settings'
     );
@@ -91,16 +91,44 @@ function mpgc_register_settings() {
     add_settings_field(
         'mpgc_cache_duration',
         __( 'Cache Duration (hours)', 'memberpress-geo-currency' ),
-        __NAMESPACE__ . '\mpgc_cache_duration_callback', // Use namespace
+        __NAMESPACE__ . '\mpgc_cache_duration_callback',
         'mpgc-settings',
         'mpgc_general_settings'
     );
 }
-add_action( 'admin_init', __NAMESPACE__ . '\mpgc_register_settings' ); // Use namespace
+add_action( 'admin_init', __NAMESPACE__ . '\mpgc_register_settings' ); // Correct: Use namespace here
 
 // Section Callbacks
 function mpgc_api_settings_callback() {
-    echo '<p>' . __( 'Enter your API keys below:', 'memberpress-geo-currency' ) . '</p>';
+    ?>
+    <p><?php _e( 'Enter your API keys below. These keys are essential for the plugin to function correctly.', 'memberpress-geo-currency' ); ?></p>
+
+    <div class="mpgc-accordion">
+        <h3><?php _e( 'How to get an IPInfo API Key', 'memberpress-geo-currency' ); ?></h3>
+        <div>
+            <ol>
+                <li><?php printf( __( 'Visit the IPInfo website: %s', 'memberpress-geo-currency' ), '<a href="https://ipinfo.io/signup" target="_blank">ipinfo.io</a>' ); ?></li>
+                <li><?php _e( 'Sign up for a free or paid account.', 'memberpress-geo-currency' ); ?></li>
+                <li><?php _e( 'Once logged in, go to your account dashboard.', 'memberpress-geo-currency' ); ?></li>
+                <li><?php _e( 'You will find your API key listed under the "API Token" section.', 'memberpress-geo-currency' ); ?></li>
+                <li><?php _e( 'Copy the API key and paste it into the "IPInfo API Key" field above.', 'memberpress-geo-currency' ); ?></li>
+            </ol>
+            <img src="<?php echo esc_url( MPGC_PLUGIN_URL . 'assets/images/ipinfo-api-key.png' ); ?>" alt="<?php esc_attr_e( 'Screenshot of IPInfo API Key location', 'memberpress-geo-currency' ); ?>">
+        </div>
+
+        <h3><?php _e( 'How to get an Open Exchange Rates API Key', 'memberpress-geo-currency' ); ?></h3>
+        <div>
+            <ol>
+                <li><?php printf( __( 'Visit the Open Exchange Rates website: %s', 'memberpress-geo-currency' ), '<a href="https://openexchangerates.org/signup" target="_blank">openexchangerates.org</a>' ); ?></li>
+                <li><?php _e( 'Sign up for a free or paid account.', 'memberpress-geo-currency' ); ?></li>
+                <li><?php _e( 'After signing up, go to the "App IDs" tab in your dashboard.', 'memberpress-geo-currency' ); ?></li>
+                <li><?php _e( 'Create a new App ID or copy an existing one.', 'memberpress-geo-currency' ); ?></li>
+                <li><?php _e( 'Copy the App ID and paste it into the "Open Exchange Rates API Key" field above.', 'memberpress-geo-currency' ); ?></li>
+            </ol>
+            <img src="<?php echo esc_url( MPGC_PLUGIN_URL . 'assets/images/oer-api-key.png' ); ?>" alt="<?php esc_attr_e( 'Screenshot of Open Exchange Rates App ID location', 'memberpress-geo-currency' ); ?>">
+        </div>
+    </div>
+    <?php
 }
 
 function mpgc_general_settings_callback() {
@@ -275,38 +303,4 @@ function mpgc_cache_duration_callback() {
         esc_attr( $cache_duration )
     );
     echo '<p class="description">' . __( 'Enter the cache duration in hours.', 'memberpress-geo-currency' ) . '</p>';
-}
-
-
-// Section Callbacks
-function mpgc_api_settings_callback() {
-    ?>
-    <p><?php _e( 'Enter your API keys below. These keys are essential for the plugin to function correctly.', 'memberpress-geo-currency' ); ?></p>
-
-    <div class="mpgc-accordion">
-        <h3><?php _e( 'How to get an IPInfo API Key', 'memberpress-geo-currency' ); ?></h3>
-        <div>
-            <ol>
-                <li><?php printf( __( 'Visit the IPInfo website: %s', 'memberpress-geo-currency' ), '<a href="https://ipinfo.io/signup" target="_blank">ipinfo.io</a>' ); ?></li>
-                <li><?php _e( 'Sign up for a free or paid account.', 'memberpress-geo-currency' ); ?></li>
-                <li><?php _e( 'Once logged in, go to your account dashboard.', 'memberpress-geo-currency' ); ?></li>
-                <li><?php _e( 'You will find your API key listed under the "API Token" section.', 'memberpress-geo-currency' ); ?></li>
-                <li><?php _e( 'Copy the API key and paste it into the "IPInfo API Key" field above.', 'memberpress-geo-currency' ); ?></li>
-            </ol>
-            <img src="<?php echo esc_url( MPGC_PLUGIN_URL . 'assets/images/ipinfo-api-key.png' ); ?>" alt="<?php esc_attr_e( 'Screenshot of IPInfo API Key location', 'memberpress-geo-currency' ); ?>">
-        </div>
-
-        <h3><?php _e( 'How to get an Open Exchange Rates API Key', 'memberpress-geo-currency' ); ?></h3>
-        <div>
-            <ol>
-                <li><?php printf( __( 'Visit the Open Exchange Rates website: %s', 'memberpress-geo-currency' ), '<a href="https://openexchangerates.org/signup" target="_blank">openexchangerates.org</a>' ); ?></li>
-                <li><?php _e( 'Sign up for a free or paid account.', 'memberpress-geo-currency' ); ?></li>
-                <li><?php _e( 'After signing up, go to the "App IDs" tab in your dashboard.', 'memberpress-geo-currency' ); ?></li>
-                <li><?php _e( 'Create a new App ID or copy an existing one.', 'memberpress-geo-currency' ); ?></li>
-                <li><?php _e( 'Copy the App ID and paste it into the "Open Exchange Rates API Key" field above.', 'memberpress-geo-currency' ); ?></li>
-            </ol>
-            <img src="<?php echo esc_url( MPGC_PLUGIN_URL . 'assets/images/oer-api-key.png' ); ?>" alt="<?php esc_attr_e( 'Screenshot of Open Exchange Rates App ID location', 'memberpress-geo-currency' ); ?>">
-        </div>
-    </div>
-    <?php
 }
