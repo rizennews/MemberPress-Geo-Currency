@@ -10,8 +10,7 @@ jQuery(document).ready(function($) {
             $toggleButton.insertAfter($input);
 
             $toggleButton.on('click', function() {
-                var inputType = $input.attr('type');
-                if (inputType === 'text') {
+                if ($input.attr('type') === 'text') {
                     $input.attr('type', 'password');
                     $(this).text('Show');
                 } else {
@@ -24,8 +23,8 @@ jQuery(document).ready(function($) {
 
     // 2. Input Validation
     $('form').on('submit', function(e) {
-        var ipInfoApiKey = $('#mpgc_ipinfo_api_key').val().trim();
-        var oerApiKey = $('#mpgc_oer_api_key').val().trim();
+        var ipInfoApiKey = $('#mpgc_ipinfo_api_key').val().trim(); // Added trim()
+        var oerApiKey = $('#mpgc_oer_api_key').val().trim(); // Added trim()
         var cacheDuration = $('#mpgc_cache_duration').val().trim();
         var hasErrors = false;
         $('.mpgc-error').remove(); // Remove previous errors
@@ -39,7 +38,7 @@ jQuery(document).ready(function($) {
             $('#mpgc_oer_api_key').after('<span class="mpgc-error" style="color:red; margin-left: 5px;">This field is required.</span>');
             hasErrors = true;
         }
-        
+
         if (cacheDuration === '' || isNaN(cacheDuration) || parseInt(cacheDuration) < 1) {
             $('#mpgc_cache_duration').after('<span class="mpgc-error" style="color:red; margin-left: 5px;">Enter a valid number (minimum 1).</span>');
             hasErrors = true;
@@ -55,7 +54,7 @@ jQuery(document).ready(function($) {
     var currencySymbol = $('#mpgc_default_currency_symbol');
     if (currencySymbol.length === 0) {
         // Add a span for the symbol if it doesn't exist
-        $('#mpgc_default_currency').after('<span id="mpgc_default_currency_symbol"></span>');
+        $('#mpgc_default_currency').after(' <span id="mpgc_default_currency_symbol"></span>');
         currencySymbol = $('#mpgc_default_currency_symbol');
     }
 
@@ -190,14 +189,12 @@ jQuery(document).ready(function($) {
 
     // 4. Cache Duration Helper
     var cacheHelper = $('#mpgc_cache_duration_helper');
-    if(cacheHelper.length === 0) {
+    if (cacheHelper.length === 0) {
         $('#mpgc_cache_duration').after('<p id="mpgc_cache_duration_helper" class="description">Higher values reduce the number of API requests, but may display less up-to-date exchange rates.</p>');
     }
-    
-});
 
-
-// Accordion Functionality
-$('.mpgc-accordion h3').click(function() {
-    $(this).next('div').slideToggle().siblings('div').slideUp();
+    // Accordion Functionality - Moved inside document ready
+    $('.mpgc-accordion h3').click(function() {
+        $(this).next('div').slideToggle().siblings('div').slideUp();
+    });
 });
