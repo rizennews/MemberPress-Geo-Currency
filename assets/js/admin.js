@@ -195,3 +195,10 @@ jQuery(document).ready(function($) {
     }
     
 });
+
+
+// Accordion Functionality
+$('.mpgc-accordion h3').click(function() {
+    $(this).next('div').slideToggle().siblings('div').slideUp();
+});
+});
