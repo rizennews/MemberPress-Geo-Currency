@@ -1,0 +1,13 @@
+/* Basic styling for the admin settings page */
+.wrap .form-table th {
+    width: 200px;
+}
+
+.wrap .form-table input[type="text"],
+.wrap .form-table select {
+    width: 300px;
+}
+
+.wrap .form-table input[type="number"] {
+    width: 80px;
+}

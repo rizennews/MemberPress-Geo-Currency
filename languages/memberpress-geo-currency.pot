@@ -1,0 +1,81 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MemberPress Geo Currency\n"
+"POT-Creation-Date: 2023-10-27 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Padmore Aning <pad@designolabs.com>\n"
+"Language-Team: Designolabs Studio <info@designolabs.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: memberpress-geo-currency.php:24
+msgid "Automatically switch the displayed currency in MemberPress based on the user's geolocation."
+msgstr ""
+
+#: memberpress-geo-currency.php:49
+msgid "MemberPress Geo Currency requires MemberPress to be activated."
+msgstr ""
+
+#: admin/admin-settings.php:16
+msgid "Geo Currency Settings"
+msgstr ""
+
+#: admin/admin-settings.php:17
+msgid "Geo Currency"
+msgstr ""
+
+#: admin/admin-settings.php:30
+msgid "MemberPress Geo Currency Settings"
+msgstr ""
+
+#: admin/admin-settings.php:56
+msgid "API Settings"
+msgstr ""
+
+#: admin/admin-settings.php:65
+msgid "IPInfo API Key"
+msgstr ""
+
+#: admin/admin-settings.php:74
+msgid "Open Exchange Rates API Key"
+msgstr ""
+
+#: admin/admin-settings.php:82
+msgid "General Settings"
+msgstr ""
+
+#: admin/admin-settings.php:91
+msgid "Default Currency"
+msgstr ""
+
+#: admin/admin-settings.php:100
+msgid "Cache Duration (hours)"
+msgstr ""
+
+#: admin/admin-settings.php:109
+msgid "Enter your API keys below:"
+msgstr ""
+
+#: admin/admin-settings.php:113
+msgid "Configure general settings:"
+msgstr ""
+
+#: admin/admin-settings.php:119
+msgid "Enter your IPInfo API key."
+msgstr ""
+
+#: admin/admin-settings.php:125
+msgid "Enter your Open Exchange Rates API key."
+msgstr ""
+
+#: admin/admin-settings.php:144
+msgid "Select the default currency to use."
+msgstr ""
+
+#: admin/admin-settings.php:150
+msgid "Enter the cache duration in hours."
+msgstr ""
