@@ -16,10 +16,10 @@ function mpgc_register_settings_page() {
 		'mpgc-settings',
 		'mpgc_settings_page_callback',
 		'dashicons-money-alt',
-		80
+		81
 	);
 }
-add_action( 'admin_menu', 'mpgc_register_settings_page' );
+add_action('admin_menu', 'mpgc_register_settings_page');
 
 /**
  * Settings page callback.
