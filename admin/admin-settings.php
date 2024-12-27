@@ -15,30 +15,30 @@ function mpgc_register_settings_page() {
         __( 'Geo Currency', 'memberpress-geo-currency' ),
         'manage_options',
         'mpgc-settings',
-        __NAMESPACE__ . '\mpgc_settings_page_callback', 
+        __NAMESPACE__ . '\mpgc_settings_page_callback', // Add namespace here as well
         'dashicons-money-alt',
         81
     );
 }
-add_action('admin_menu', __NAMESPACE__ . '\mpgc_register_settings_page');
+add_action('admin_menu', __NAMESPACE__ . '\mpgc_register_settings_page'); // Use namespace here
 
 /**
  * Settings page callback.
  */
 function mpgc_settings_page_callback() {
-	?>
-	<div class="wrap">
-		<h1><?php _e( 'MemberPress Geo Currency Settings', 'memberpress-geo-currency' ); ?></h1>
+    ?>
+    <div class="wrap">
+        <h1><?php _e( 'MemberPress Geo Currency Settings', 'memberpress-geo-currency' ); ?></h1>
 
-		<form method="post" action="options.php">
-			<?php
-			settings_fields( 'mpgc_settings_group' );
-			do_settings_sections( 'mpgc-settings' );
-			submit_button();
-			?>
-		</form>
-	</div>
-	<?php
+        <form method="post" action="options.php">
+            <?php
+            settings_fields( 'mpgc_settings_group' );
+            do_settings_sections( 'mpgc-settings' );
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
 }
 
 /**
