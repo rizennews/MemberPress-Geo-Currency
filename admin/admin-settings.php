@@ -1,5 +1,6 @@
 <?php
 namespace MemberPressGeoCurrency;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -9,17 +10,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register the settings page.
  */
 function mpgc_register_settings_page() {
-	add_menu_page(
-		__( 'Geo Currency Settings', 'memberpress-geo-currency' ),
-		__( 'Geo Currency', 'memberpress-geo-currency' ),
-		'manage_options',
-		'mpgc-settings',
-		'mpgc_settings_page_callback',
-		'dashicons-money-alt',
-		81
-	);
+    add_menu_page(
+        __( 'Geo Currency Settings', 'memberpress-geo-currency' ),
+        __( 'Geo Currency', 'memberpress-geo-currency' ),
+        'manage_options',
+        'mpgc-settings',
+        __NAMESPACE__ . '\mpgc_settings_page_callback', 
+        'dashicons-money-alt',
+        81
+    );
 }
-add_action('admin_menu', 'mpgc_register_settings_page');
+add_action('admin_menu', __NAMESPACE__ . '\mpgc_register_settings_page');
 
 /**
  * Settings page callback.
