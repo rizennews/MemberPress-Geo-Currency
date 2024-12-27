@@ -17,7 +17,7 @@ function mpgc_register_settings_page() {
         'mpgc-settings',
         __NAMESPACE__ . '\mpgc_settings_page_callback', // Add namespace here as well
         'dashicons-money-alt',
-        81
+        100
     );
 }
 add_action('admin_menu', __NAMESPACE__ . '\mpgc_register_settings_page'); // Use namespace here
