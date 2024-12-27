@@ -6,11 +6,11 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Padmore Aning <pad@designolabs.com>\n"
 "Language-Team: Designolabs Studio <info@designolabs.com>\n"
-"Language: \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: memberpress-geo-currency.php:24
 msgid "Automatically switch the displayed currency in MemberPress based on the user's geolocation."

@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: MemberPress Geo Currency
- * Plugin URI:  https://yourwebsite.com/memberpress-geo-currency
+ * Plugin URI:  https://github.com/rizennews/memberpress-geo-currency
  * Description: Automatically switch the displayed currency in MemberPress based on the user's geolocation.
  * Version:     1.0.0
  * Author:      Padmore Aning
- * Author URI:  https://yourwebsite.com
+ * Author URI:  https://designolabs.com
  * Text Domain: memberpress-geo-currency
  * Domain Path: /languages
  */

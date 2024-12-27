@@ -1,13 +1,28 @@
-/* Basic styling for the admin settings page */
+/* Enhanced styling for the admin settings page */
 .wrap .form-table th {
-    width: 200px;
+    width: 250px; /* Increased width for better label visibility */
+    font-weight: 600; /* Make labels slightly bolder */
 }
 
 .wrap .form-table input[type="text"],
 .wrap .form-table select {
-    width: 300px;
+    width: 400px; /* Increased width for input fields */
+    padding: 8px; /* Add some padding for better spacing */
+    border: 1px solid #ddd; /* Add a subtle border */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .wrap .form-table input[type="number"] {
-    width: 80px;
+    width: 120px; /* Slightly wider number input */
+    padding: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.wrap .form-table input[type="text"]:focus,
+.wrap .form-table select:focus,
+.wrap .form-table input[type="number"]:focus {
+    border-color: #007cba; /* Highlight border on focus */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 3px rgba(0, 124, 186, 0.5); /* Add a subtle shadow on focus */
 }
