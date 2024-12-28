@@ -78,7 +78,7 @@ This plugin is licensed under the GPLv2 or later.
 
 ## Credits
 
-This plugin was developed by [Your Name or Company Name].
+This plugin was developed by [Padmore Aning].
 
 It utilizes the following third-party services:
 
