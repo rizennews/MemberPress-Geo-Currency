@@ -36,7 +36,7 @@ This plugin leverages the IPInfo API for accurate geolocation and the Open Excha
 
 1.  **Download the Plugin:** Obtain the latest version of the plugin from the [Releases](https://github.com/rizennews/memberpress-geo-currency/releases) page.
 2.  **Upload and Activate:** In your WordPress admin panel, navigate to Plugins -> Add New -> Upload Plugin. Upload the downloaded zip file and activate the plugin.
-3.  **Configure Plugin Settings:** Go to the "Geo Currency" settings page in your WordPress admin (typically located under the "Settings" or "MemberPress" menu). Enter your IPInfo API key, Open Exchange Rates API key, default currency, and desired cache duration.
+3.  **Configure Plugin Settings:** Go to the "Geo Currency" settings page in your WordPress admin. Enter your IPInfo API key, Open Exchange Rates API key, default currency, and desired cache duration.
 
 ## Usage
 
@@ -78,7 +78,7 @@ This plugin is licensed under the GPLv2 or later.
 
 ## Credits
 
-This plugin was developed by [Your Name or Company Name].
+This plugin was developed by [Padmore Aning](https://designolabs.com).
 
 It utilizes the following third-party services:
 
