@@ -47,6 +47,23 @@ $updateChecker = PucFactory::buildUpdateChecker(
 );
 
 $updateChecker->setBranch('main');
+
+// Enable debug mode (temporarily!)
+$updateChecker->addQueryArgFilter(function ($queryArgs) {
+    $queryArgs['debug'] = 1;
+    return $queryArgs;
+});
+
+// Debug update info (temporarily!)
+add_action('admin_init', function() use ($updateChecker) {
+    $updateInfo = $updateChecker->requestInfo();
+    echo '<pre>';
+    var_dump($updateInfo);
+    echo '</pre>';
+    exit;
+});
+
+
 /**
  * Initialize the plugin.
  */
